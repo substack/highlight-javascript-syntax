@@ -17,6 +17,9 @@
     "falafel": "^1.2.0",
     "tape": "^4.6.0"
   },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/substack/highlight-javascript-syntax.git"
