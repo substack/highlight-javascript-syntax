@@ -1,0 +1,28 @@
+{
+  "name": "highlight-javascript-syntax",
+  "version": "1.0.0",
+  "description": "highlight javascript syntax with html",
+  "main": "index.js",
+  "keywords": [
+    "syntax",
+    "highlight",
+    "javascript"
+  ],
+  "author": "substack",
+  "license": "BSD",
+  "devDependencies": {
+    "tape": "^4.6.0"
+  },
+  "dependencies": {
+    "falafel": "^1.2.0",
+    "tape": "^4.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/substack/highlight-javascript-syntax.git"
+  },
+  "bugs": {
+    "url": "https://github.com/substack/highlight-javascript-syntax/issues"
+  },
+  "homepage": "https://github.com/substack/highlight-javascript-syntax#readme"
+}
