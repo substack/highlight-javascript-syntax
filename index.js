@@ -5,7 +5,7 @@ module.exports = function (str) {
     var str = node.source()
     if (node.type === 'ArrowFunctionExpression') {
       str = str.replace(/=>/, '=&gt;')
-    } else if (node.type === 'BinaryExpression' && /<>&/.test(node.operator)) {
+    } else if (node.type === 'BinaryExpression' && /[<>&]/.test(node.operator)) {
       str = node.left.source() + esc(node.operator) + node.right.source()
     } else if (node.type === 'Literal' || node.type === 'TemplateElement') {
       str = esc(str)
@@ -15,7 +15,7 @@ module.exports = function (str) {
 }
 
 function esc (str) {
-  return str.replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/&/g, '&amp;')
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
 }
 
 function dash (str) {
