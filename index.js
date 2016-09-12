@@ -1,12 +1,13 @@
 var falafel = require('falafel')
 
-module.exports = function (str) {
-  return falafel(str, { ecmaVersion: 6 }, function (node) {
+module.exports = function (source) {
+  return falafel(source, { ecmaVersion: 6 }, function (node) {
     var str = node.source()
     if (node.type === 'ArrowFunctionExpression') {
       str = str.replace(/=>/, '=&gt;')
     } else if (node.type === 'BinaryExpression' && /[<>&]/.test(node.operator)) {
-      str = node.left.source() + esc(node.operator) + node.right.source()
+      var op = source.slice(node.left.end, node.right.start)
+      str = node.left.source() + esc(op) + node.right.source()
     } else if (node.type === 'Literal' || node.type === 'TemplateElement') {
       str = esc(str)
     }
