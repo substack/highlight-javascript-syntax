@@ -1,6 +1,6 @@
 {
   "name": "highlight-javascript-syntax",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "highlight javascript syntax with html",
   "main": "index.js",
   "keywords": [
