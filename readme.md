@@ -2,7 +2,7 @@
 
 highlight javascript syntax with html
 
-This module insert `<span>` elements into a string of javascript syntax.
+This module inserts `<span>` elements into a string of javascript syntax.
 
 # example
 
