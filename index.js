@@ -1,8 +1,13 @@
 var falafel = require('falafel')
 
 module.exports = function (source) {
-  source = source.replace(/^#!/,'//#!')
-  return falafel(source, { ecmaVersion: 6 }, function (node) {
+  var opts = {
+    ecmaVersion: 6,
+    allowReturnOutsideFunction: true,
+    allowImportExportEverywhere: true,
+    allowHashBang: true,
+  }
+  return falafel(source, opts, function (node) {
     var str = node.source()
     if (node.type === 'ArrowFunctionExpression') {
       str = str.replace(/=>/, '=&gt;')
