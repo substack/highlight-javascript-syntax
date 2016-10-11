@@ -5,7 +5,8 @@ module.exports = function (source) {
     var str = node.source()
     if (node.type === 'ArrowFunctionExpression') {
       str = str.replace(/=>/, '=&gt;')
-    } else if (node.type === 'BinaryExpression' && /[<>&]/.test(node.operator)) {
+    } else if (/^(Binary|Logical)Expression/.test(node.type)
+    && /[<>&]/.test(node.operator)) {
       var op = source.slice(node.left.end, node.right.start)
       str = node.left.source() + esc(op) + node.right.source()
     } else if (node.type === 'Literal' || node.type === 'TemplateElement') {
