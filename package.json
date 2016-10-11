@@ -14,7 +14,7 @@
     "tape": "^4.6.0"
   },
   "dependencies": {
-    "falafel": "^1.2.0",
+    "falafel": "^2.0.0",
     "tape": "^4.6.0"
   },
   "scripts": {

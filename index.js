@@ -1,6 +1,7 @@
 var falafel = require('falafel')
 
 module.exports = function (source) {
+  source = source.replace(/^#!/,'//#!')
   return falafel(source, { ecmaVersion: 6 }, function (node) {
     var str = node.source()
     if (node.type === 'ArrowFunctionExpression') {
@@ -13,7 +14,7 @@ module.exports = function (source) {
       str = esc(str)
     }
     node.update('<span class="' + dash(node.type) + '">' + str + '</span>')
-  }).toString()
+  }).toString().replace(/^([^#\n]+)\/\/#!/,'$1#!')
 }
 
 function esc (str) {
